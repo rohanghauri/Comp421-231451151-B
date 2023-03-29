@@ -1,1 +1,3 @@
-These are some of the setps to expose the 
+To perform the attack I have used 'Kali Linux' as my host OS and used a built in tool 'SqlMap' to find the vulnerabilities.
+
+STEP 1 : I have used "Acuart" to conduct the attack, initilaiiy I crawled the website using the following command
