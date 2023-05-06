@@ -1,1 +1,6 @@
 @auth M.Rohan Ghauri
+ 
+Step 1 - First I installed splunk enterprise from its official website after registering my account
+Step 2 - Then i configured the global settings for splunk to capture the logs of the host machine that is windows in my case
+Step 3 - After configuring the "Application" , "Security", and,  "System" as my data inputs I searched for the logs that are available in my system
+Step 4 - Going to the 'search & reporting' I entered "*" to display all the logs
